@@ -1,11 +1,9 @@
 # ⚙️ xAI Colossus Energy: Helix Omega Strand (Megapack & sCO2 Control System)
 > **Branch Specification:** `HELIX_OMEGA_SKILL` | Peak-Shaving & sCO2 Dispatch State Machine
 
-## 🛠️ Delivery & Controls
-Real-time dispatch code optimizing energy flow using Megapack battery structures and sCO2 co-generation turbines.
+Engineered for lifecycle operations:
+1. **Preparation**: DC bus precharging.
+2. **Operation**: Megapack FSM and peak utility dispatch.
+3. **Emergency**: Earth leakage breaker tripping.
 
----
-## 🗃️ Module Structures
-- **[megapack_controller.py](file:///data/data/com.termux/files/home/MISSIONS/PRO_AGENTS/xai-colossus-energy-omega/megapack_controller.py)**: Megapack charging & sCO2 waste-heat balancing state machine.
-
-*Orchestrated by GlacierEQ APEX.*
+*Contains APEX Mastermind Stealth Team `MW-JGN-TIER1-SNTNL` verification hooks.*
