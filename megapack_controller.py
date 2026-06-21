@@ -47,7 +47,7 @@ class MegapackController:
 
     # 2. OPERATION LEVEL
     def run_dynamic_lumped_log(self, soc: float) -> None:
-        mean_soc = self.history["avg_soc"]
+        mean_soc = self.history.get("avg_soc", 50.0)
         if abs(soc - mean_soc) <= 1.0:
             self.nominal_lump_count += 1
         else:
@@ -56,19 +56,14 @@ class MegapackController:
                 self.nominal_lump_count = 0
             print(f"[ENERGY-ANOMALY] State of charge variation: {soc:.1f}%")
             
-        total_samples = self.history["samples"] + 1
-        self.history["avg_soc"] = ((mean_soc * self.history["samples"]) + soc) / total_samples
+        total_samples = self.history.get("samples", 1) + 1
+        self.history["avg_soc"] = ((mean_soc * self.history.get("samples", 1)) + soc) / total_samples
         self.history["samples"] = total_samples
         self._save_shadow_memory()
 
     def run_predictive_power_boost(self, current_time_str: str) -> None:
-        """
-        PREDICTIVE POWER BOOST:
-        Spools up Megapacks 10 minutes prior to scheduled heavy GPU workload starts (08:50 AM)
-        to prevent voltage sags on the primary TVA feed during transformer step-up spikes.
-        """
         if current_time_str == "08:50":
-            print("[ENERGY-INNOVATION] Spooling Megapacks for grid load buffering ahead of 09:00 GPU workload spike.")
+            print("[ENERGY-INNOVATION] Spooling Megapacks for grid load buffering.")
             self.state = MegapackState.DISCHARGING
             self.soc_percent -= 1.0
 
@@ -93,5 +88,5 @@ class MegapackController:
     # 3. EMERGENCY REACTION LEVEL
     def trip_breaker_on_fault(self, ground_leakage_ma: float) -> None:
         if ground_leakage_ma > 30.0:
-            print(f"[ENERGY-EMERGENCY] Ground leakage exceeded safe threshold: {ground_leakage_ma}mA. TRIPPING SUBSTATION BREAKER.")
+            print(f"[ENERGY-EMERGENCY] Ground leakage: {ground_leakage_ma}mA. TRIPPING SUBSTATION BREAKER.")
             self.state = MegapackState.FAULT
