@@ -4,30 +4,38 @@ import os
 import sys
 import time
 
-# Ensure parent directory is in path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from megapack_controller import MegapackController, MegapackState
-
-def test_megapack_fsm():
-    print("[TEST] Running Tesla Megapack dispatch state machine...")
-    t0 = time.perf_counter()
+def run_all_tests():
+    print(f"\n=== Running Multi-file Test Suite for: {os.path.basename(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))} ===")
+    t_start = time.perf_counter()
     
-    controller = MegapackController()
-    assert controller.precharge_bus_bars() == True
+    # Clean previous shadow memory cache
+    shadow_mem = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".shadow_memory.json"))
+    if os.path.exists(shadow_mem):
+        os.remove(shadow_mem)
+        
+    # Clear previous overrides
+    shadow_rec = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".shadow_recovery"))
+    if os.path.exists(shadow_rec):
+        os.remove(shadow_rec)
+        
+    # Import and run each test module
+    from test_nominal import test_nominal
+    from test_emergency import test_emergency
+    from test_compaction import test_compaction
+    from test_integration import test_integration
     
-    # Run predictive warmup
-    controller.run_predictive_power_boost("08:50")
-    assert controller.state == MegapackState.DISCHARGING
-    print("  - Verified Megapack predictive grid-buffer discharge state")
-    
-    # Peak pricing dispatch check
-    state = controller.update_state(80.0, 280.0, 15.0)
-    assert state == MegapackState.DISCHARGING
-    print("  - Verified peak-shaving dispatch triggering at $280/MWh")
-    
-    duration_ms = (time.perf_counter() - t0) * 1000.0
+    try:
+        test_nominal()
+        test_emergency()
+        test_compaction()
+        test_integration()
+    except Exception as e:
+        print(f"  [FAIL] Test execution encountered error: {e}")
+        sys.exit(1)
+        
+    duration_ms = (time.perf_counter() - t_start) * 1000.0
     print(f"[TEST-METRICS] Status=SUCCESS Latency={duration_ms:.3f}ms")
+    sys.exit(0)
 
 if __name__ == '__main__':
-    test_megapack_fsm()
+    run_all_tests()
