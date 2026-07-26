@@ -1,0 +1,30 @@
+{
+  "repo": "xai-colossus-energy-omega",
+  "algorithm": "sha256",
+  "file_count": 23,
+  "hashes": {
+    "megapack_controller.py": "af59093c543f881f6e94b84e676d0f8343fe417b2a3abc53fb6c62952fb16083",
+    "README.md": "64f84c0e803f0a7df353503e6c7b925008e3b6b000e018d15c3a94acc4b924b3",
+    "EASTER_EGGS.md": "0c4fc58a6163b54497fc8327ec77f4293330eea4ba636e30db202836bd450900",
+    "megapack_controller.py.sha256": "1bcf25074674371582ed3c6ddeff7145afe52e28f7823ad1992b824addc2d533",
+    "AKOS.md": "eae48200ee1bf2ec3fe2f267668b1dd09bac66f3bd2e01420e5787413f247a07",
+    "HELIX_STRAND.md": "ea723d01fe4332daa05e09efb13af4ed69f2a7bf09c4d20aacff1e51fc39d680",
+    "mastermind_sidecar.py": "634e865386a24cc533ca05fb0ec1cd1b717c5113db5d4fd772fc8b9f7ed57906",
+    "SECURITY_AND_FLEET_OPS.md": "26141c0f07d95847d679de423ddb7bdee6f3e319d204383c89a58d6d3bb610c7",
+    "HELIX.md": "969ec1f915f9c9dfabbf5f3f659894f8fb446137afaf197bf6c88f01141ff360",
+    "tests/test_emergency.py.sha256": "a84e7119e1a5cad01a2ac6cca28a2d6fc8565f46198f66c5d8cd471d23d02b17",
+    "tests/test_load_shed.py": "6b03e77f05b674b5339a7412f52cd367a5bd73120092518d146d91be1e207432",
+    "tests/test_integration.py.sha256": "46f3c36a882a80c95b9e11e6067c6b4931e0df7ca5f3a44bae8fe5491d453b09",
+    "tests/test_emergency.py": "3e11c9e4bbce4f7f2f801928eb1ef3cf1de73ef11c2872f7b95ac9b5223c0722",
+    "tests/run_tests.py": "3860742701ed634a5746d8532bfdf9a1dda277ba59497882acb8a9abcd6b8802",
+    "tests/test_compaction.py": "90843e3db78bf7ecb9b0772cc844b364fb657e5e0db99e40623b29f8829b2d58",
+    "tests/run_tests.py.sha256": "60c24365ccb050b5968da5b91200cf98a2e4172b118c272b22025fec2d0a0896",
+    "tests/test_nominal.py.sha256": "b815ff31337034c4541641fc949d08467f066d618ce128954c8293e8cebd3cc1",
+    "tests/test_integration.py": "97dc620146a5da36cc1a1f1146785fb30ea2189e54e72df69bf8d25c2b768aed",
+    "tests/.shadow_memory.json": "5c7aacd20829343b1f692f7be1913208344f85191e5b4c47c4c357354cba80ce",
+    "tests/test_nominal.py": "bb4a51a090303bf77800a9c8f8aa90522523baafac8332ea6c318c388314ef45",
+    "tests/test_compaction.py.sha256": "ba70bceca5f597f69ef0d6633e63db9c4dee789a778ba69ab0b455d0c498f75f",
+    ".github/workflows/ci.yml": "393542f8109cac2611d6ab41b8b062e6cc8be46894379568f15c0b7e2c1a639f",
+    "src/load_shed.py": "31befd5d89d5d35b4b674e025040bba93f90f637733ab15cfc302c105df5ebad"
+  }
+}
