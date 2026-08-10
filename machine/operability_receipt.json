@@ -1,0 +1,36 @@
+{
+  "schema": "glaciereq.operability-receipt.v1",
+  "repository": "GlacierEQ/xai-colossus-energy-omega",
+  "at": "2026-08-10T04:12Z",
+  "source_sha": "a34c56220bc4d11ba47519de15df552a7988d31ee180ac5e06330a6bf9869ed0",
+  "entry": "scripts/operate.py",
+  "primary_output": {
+    "module": "load_shed",
+    "ok": true,
+    "repository": "GlacierEQ/xai-colossus-energy-omega",
+    "smoke": {
+      "args": [
+        "[Circuit(name='sample_name', mw=1.0, pri",
+        "1.0"
+      ],
+      "content_checked": true,
+      "invoked": true,
+      "kind": "fn",
+      "name": "shed",
+      "result": {
+        "actions": [
+          {
+            "mw": 1.0,
+            "priority": 1,
+            "shed": "sample_name"
+          }
+        ],
+        "freed_mw": 1.0,
+        "met": true,
+        "strand": "omega"
+      }
+    }
+  },
+  "dual_run_ok": true,
+  "result": "PASS"
+}

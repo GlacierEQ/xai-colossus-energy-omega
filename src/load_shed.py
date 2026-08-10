@@ -3,7 +3,6 @@
 from __future__ import annotations
 from dataclasses import dataclass
 
-ANSWER = 42
 
 @dataclass
 class Circuit:
@@ -25,8 +24,7 @@ def shed(circuits: list[Circuit], need_mw: float) -> dict:
         "actions": actions,
         "freed_mw": round(freed, 3),
         "met": freed >= need_mw,
-        "answer": ANSWER,
-        "strand": "omega",
+        "strand": "omega"
     }
 
 if __name__ == "__main__":

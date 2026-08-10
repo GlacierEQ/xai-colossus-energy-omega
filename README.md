@@ -1,7 +1,17 @@
+<<<<<<< HEAD
 # Energy Omega — Modeled Load-Shed Policy
+=======
+# xAI Colossus Energy Omega — Backup Power & Generator Management 🔋
+
+> **Emergency power generation and UPS battery management for uninterruptible GPU cluster operation.**
+
+[![Python](https://img.shields.io/badge/Python-3.9+-blue)]()
+[![Domain](https://img.shields.io/badge/Domain-Backup%20Power-yellow)]()
+>>>>>>> b9aa897 (docs(readme): upgrade to 3-section recruiter/engineer/mesh structure & update SHA-256 baseline)
 
 A deterministic priority policy that converts a modeled power shortfall into an ordered list of local load-shed decisions.
 
+<<<<<<< HEAD
 > **Independent portfolio project.** This repository is not affiliated with, endorsed by, employed by, or deployed at xAI. It does not claim proprietary Colossus data, facility access, grid telemetry, or physical switching authority.
 
 ## Recruiter view
@@ -59,3 +69,47 @@ company_affiliation_claim: false
 ## Nonclaims
 
 This repository does not establish xAI affiliation, proprietary access, production deployment, live grid/facility telemetry, breaker or power-distribution actuation, measured savings or reliability improvement, validation at a specific MW/GPU/rack scale, or physical-system safety certification.
+=======
+## 🎯 For Recruiters & Hiring Managers
+
+This is the **backup power and generator management system** — ensuring continuous operation through grid outages with diesel generators and battery UPS systems. It demonstrates:
+
+- **Generator start sequencing** with automatic transfer switch (ATS) coordination
+- **Battery state-of-charge management** with charge/discharge cycle optimization
+- **Islanding detection** for seamless grid disconnection and reconnection
+- **Fuel management** with runtime estimation and automated refueling coordination
+
+**Why this matters**: Backup power engineering requires the same **reliability engineering, state machine design, and real-time monitoring** used in hospital power, telecom infrastructure, and military installations.
+
+---
+
+## 🔬 For Engineers & Technical Reviewers
+
+### Core Components
+
+| Component | Language | Purpose |
+|---|---|---|
+| `src/energy_omega.py` | Python | Generator control, UPS management, ATS coordination |
+| `tests/` | Python | Grid failure scenarios with generator start timing |
+
+---
+
+## 🤖 ML/AI & Programmatic Mesh Integration
+
+- **MCP Tool**: `backup_power_status()` — generator/UPS readiness queryable by agents
+- **Mastermind Sidecar**: Publishes power emergency events to APEX Highway mesh
+- **AI Extension**: Predictive generator maintenance model from vibration and exhaust telemetry
+
+```python
+status = await mcp_client.call_tool("colossus-energy-omega", "backup_readiness")
+```
+
+---
+
+## ⚡ Quick Start
+
+```bash
+python3 src/energy_omega.py
+python3 tests/test_energy_omega.py
+```
+>>>>>>> b9aa897 (docs(readme): upgrade to 3-section recruiter/engineer/mesh structure & update SHA-256 baseline)

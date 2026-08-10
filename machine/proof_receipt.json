@@ -1,0 +1,31 @@
+{
+  "schema": "glaciereq.proof-receipt.v1",
+  "repository": "GlacierEQ/xai-colossus-energy-omega",
+  "source_sha": "a34c56220bc4d11ba47519de15df552a7988d31ee180ac5e06330a6bf9869ed0",
+  "proof_id": "elite-xai-colossus-energy-omega-1786335149",
+  "environment": {
+    "python": "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python",
+    "PYTHONPATH": "/Users/kcbflux/job-app/repos/xai-colossus-energy-omega:/Users/kcbflux/job-app/repos/xai-colossus-energy-omega/src",
+    "entry": "unittest"
+  },
+  "tests": [
+    "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python -m unittest discover -s tests -v (x2)"
+  ],
+  "adversarial_tests": [
+    "tests/test_adversarial.py"
+  ],
+  "runtime": {
+    "operate": "scripts/operate.py (x2)",
+    "dual_run_ok": true,
+    "proof_dual_run_ok": true
+  },
+  "result": "PASS",
+  "limitations": [
+    "not production deployed",
+    "reference implementation only"
+  ],
+  "timestamp": "2026-08-10T04:12Z",
+  "artifact_hashes": {
+    "operability_receipt": "b3e269848a5a5e76ba6d8efc3a527be53bf86e2672e0d47d2797a9828639a88f"
+  }
+}
